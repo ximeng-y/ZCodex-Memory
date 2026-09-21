@@ -1,0 +1,38 @@
+{
+  "name": "zcodex-memory",
+  "version": "1.0.0",
+  "description": "ZCodex Memory：面向 Codex 的项目级文件记忆插件，提供 Hook 生命周期、MCP 工具和 Skill 约定。",
+  "author": {
+    "name": "ximeng"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/ximeng-y/ZCodex-Memory",
+  "repository": "https://github.com/ximeng-y/ZCodex-Memory",
+  "keywords": [
+    "memory",
+    "zcodex",
+    "zcode",
+    "hooks",
+    "mcp",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "ZCodex Memory",
+    "shortDescription": "面向 Codex 的项目级记忆",
+    "longDescription": "ZCodex Memory：复刻 ZCode 主项目 Memory，提供 MEMORY.md 索引、单文件记忆、MCP 结构化读写和 Stop 后台提取。",
+    "developerName": "ximeng",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "记住这个项目约束",
+      "查找之前的项目记忆",
+      "忘掉已经过期的记忆"
+    ],
+    "brandColor": "#0F766E"
+  }
+}

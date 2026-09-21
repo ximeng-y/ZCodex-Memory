@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "zcodex_memory": {
+      "command": "cmd.exe",
+      "args": [
+        "/d",
+        "/s",
+        "/c",
+        "call",
+        "./scripts/launch_mcp.cmd"
+      ],
+      "cwd": ".",
+      "enabled": true,
+      "default_tools_approval_mode": "approve",
+      "startup_timeout_sec": 20,
+      "tool_timeout_sec": 60,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    }
+  }
+}

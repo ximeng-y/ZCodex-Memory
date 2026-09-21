@@ -1,0 +1,59 @@
+{
+  "description": "ZCodex Memory 生命周期 Hook",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -X utf8 \"${PLUGIN_ROOT}/hooks/session_start.py\"",
+            "commandWindows": "python -X utf8 \"${PLUGIN_ROOT}/hooks/session_start.py\"",
+            "statusMessage": "加载 ZCodex Memory 索引",
+            "additionalContextLimit": 12000,
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -X utf8 \"${PLUGIN_ROOT}/hooks/user_prompt_submit.py\"",
+            "commandWindows": "python -X utf8 \"${PLUGIN_ROOT}/hooks/user_prompt_submit.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__zcodex_memory__memory_write|mcp__zcodex_memory__memory_forget|mcp__zcodex_memory__memory_repair_index",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -X utf8 \"${PLUGIN_ROOT}/hooks/post_tool_use.py\"",
+            "commandWindows": "python -X utf8 \"${PLUGIN_ROOT}/hooks/post_tool_use.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -X utf8 \"${PLUGIN_ROOT}/hooks/stop_extract.py\"",
+            "commandWindows": "python -X utf8 \"${PLUGIN_ROOT}/hooks/stop_extract.py\"",
+            "async": true,
+            "timeout": 180,
+            "statusMessage": "提取 ZCodex Memory"
+          }
+        ]
+      }
+    ]
+  }
+}
